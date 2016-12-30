@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SwiftPick.xcodeproj">
+      location = "self:/Users/nam/Documents/nammac/xcode/SwiftPick/SwiftPick.xcodeproj">
    </FileRef>
 </Workspace>
