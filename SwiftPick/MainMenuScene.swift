@@ -74,11 +74,18 @@ class MainMenuScene: SKScene, GKGameCenterControllerDelegate {
                     scene.scaleMode = .aspectFit
                     
                     //present the scene
-                    view!.presentScene(scene, transition: SKTransition.doorsOpenVertical(withDuration: (3.0)))
+                    view!.presentScene(scene, transition: SKTransition.doorsOpenVertical(withDuration: (1.0)))
                 }
             }
             if atPoint(location).name == "highScores" {
                 showLeaderboard()
+            }
+            if atPoint(location).name == "howToPlay" {
+                if let scene = HowToPlaySceneClass(fileNamed: "HowToPlayScene") {
+                    scene.scaleMode = .aspectFit
+                
+                view!.presentScene(scene, transition: SKTransition.doorsOpenVertical(withDuration: (1.0)))
+                }
             }
             if atPoint(location).name == "sound" {
                 if muted == false {

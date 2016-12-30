@@ -24,6 +24,7 @@ class FastGameSceneClass: SKScene {
     
     //background music
     let backgroundMusic = SKAudioNode(fileNamed: "bgmusic.mp3")
+    var backgroundMusicPlayer = AVAudioPlayer()
     let pauseMusic = SKAction.pause()
     let resumeMusic = SKAction.play()
     var musicSwitch = SKSpriteNode()
@@ -39,6 +40,7 @@ class FastGameSceneClass: SKScene {
     var audioPlayer = AVAudioPlayer()
     var sfxLaser: SystemSoundID = 0
     var sfxError: SystemSoundID = 0
+    var bgmusic: SystemSoundID = 0
     var muted =  false
     var noMusic = false
     
@@ -169,7 +171,8 @@ class FastGameSceneClass: SKScene {
                 if noMusic == false {
                     print("turning off music")
                     musicSwitch.texture = SKTexture(imageNamed: "MusicOff")
-                    backgroundMusic.removeFromParent()
+                    backgroundMusicPlayer.stop()
+                    //backgroundMusic.removeFromParent()
                     noMusic = true
                     let noMusicDefault = UserDefaults.standard
                     noMusicDefault.setValue(noMusic, forKey: "noMusic")
@@ -180,7 +183,8 @@ class FastGameSceneClass: SKScene {
                 else{
                     if noMusic == true {
                         print("playing music")
-                        addChild(backgroundMusic)
+                        //addChild(backgroundMusic)
+                        playBackgroundMusic()
                         musicSwitch.texture = SKTexture(imageNamed: "MusicOn")
                         //backgroundMusic.run(resumeMusic)
                         noMusic = false
@@ -420,11 +424,12 @@ class FastGameSceneClass: SKScene {
         
         if noMusic == false {
             musicSwitch.texture = SKTexture(imageNamed: "MusicOn")
-            addChild(backgroundMusic)
+            playBackgroundMusic()
+            //addChild(backgroundMusic)
         } else {
             if noMusic == true {
             musicSwitch.texture = SKTexture(imageNamed: "MusicOff")
-            //addChild(backgroundMusic)
+            
             }
         }
 
@@ -434,6 +439,8 @@ class FastGameSceneClass: SKScene {
         //sounds
         let sfxLaser = URL(fileURLWithPath: Bundle.main.path(forResource: "woosh", ofType: "mp3")!)
         let sfxError = URL(fileURLWithPath: Bundle.main.path(forResource: "splat", ofType: "wav")!)
+        //let bgmusic = URL(fileURLWithPath: Bundle.main.path(forResource: "bgmusic", ofType: "mp3")!)
+        //AudioServicesCreateSystemSoundID(bgmusic as CFURL, &self.bgmusic)
         AudioServicesCreateSystemSoundID(sfxLaser as CFURL, &self.sfxLaser)
         AudioServicesCreateSystemSoundID(sfxError as CFURL, &self.sfxError)
         
@@ -708,6 +715,22 @@ class FastGameSceneClass: SKScene {
         musicSwitch.isHidden = true
         pauseButton.isHidden = false
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(gameClock), userInfo: nil, repeats: true)
+        
+    }
+    
+    
+    func playBackgroundMusic() {
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        try!audioSession.setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.mixWithOthers)
+
+        if let path = Bundle.main.path(forResource: "bgmusic", ofType: "mp3") {
+            let filePath = NSURL(fileURLWithPath:path)
+            backgroundMusicPlayer = try! AVAudioPlayer.init(contentsOf: filePath as URL)
+            backgroundMusicPlayer.numberOfLoops = -1 //logic for infinite loop
+            backgroundMusicPlayer.prepareToPlay()
+            backgroundMusicPlayer.play()
+        }
         
     }
     

@@ -26,6 +26,8 @@
 		3D9069161DF4F7BE007B91E4 /* OnePlayerScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3D9069151DF4F7BE007B91E4 /* OnePlayerScene.sks */; };
 		3D9069181DF4F7DF007B91E4 /* OnePlayerSceneClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9069171DF4F7DF007B91E4 /* OnePlayerSceneClass.swift */; };
 		3D90691B1DF5E34F007B91E4 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90691A1DF5E34F007B91E4 /* ItemController.swift */; };
+		3D9145681E16FDFF00BA53CF /* HowToPlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3D9145671E16FDFF00BA53CF /* HowToPlayScene.sks */; };
+		3D91456A1E16FFCB00BA53CF /* HowToPlaySceneClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9145691E16FFCB00BA53CF /* HowToPlaySceneClass.swift */; };
 		3DB9362B1E01D8BA00DD106D /* FastGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3DB9362A1E01D8BA00DD106D /* FastGameScene.sks */; };
 		3DB9362D1E01D8E300DD106D /* FastGameSceneClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9362C1E01D8E300DD106D /* FastGameSceneClass.swift */; };
 		3DC826D71E145A2800476C5C /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC826D61E145A2800476C5C /* GameKit.framework */; };
@@ -78,6 +80,8 @@
 		3D9069151DF4F7BE007B91E4 /* OnePlayerScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OnePlayerScene.sks; sourceTree = "<group>"; };
 		3D9069171DF4F7DF007B91E4 /* OnePlayerSceneClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePlayerSceneClass.swift; sourceTree = "<group>"; };
 		3D90691A1DF5E34F007B91E4 /* ItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
+		3D9145671E16FDFF00BA53CF /* HowToPlayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HowToPlayScene.sks; sourceTree = "<group>"; };
+		3D9145691E16FFCB00BA53CF /* HowToPlaySceneClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlaySceneClass.swift; sourceTree = "<group>"; };
 		3DB9362A1E01D8BA00DD106D /* FastGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FastGameScene.sks; sourceTree = "<group>"; };
 		3DB9362C1E01D8E300DD106D /* FastGameSceneClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastGameSceneClass.swift; sourceTree = "<group>"; };
 		3DC826D61E145A2800476C5C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -172,11 +176,8 @@
 		3D90690E1DF4F57A007B91E4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3D90690F1DF4F5A5007B91E4 /* MainMenu.sks */,
-				3D9069151DF4F7BE007B91E4 /* OnePlayerScene.sks */,
-				3D0B4FD91DFC71BC00B55A38 /* EndGameScene.sks */,
-				3DB9362A1E01D8BA00DD106D /* FastGameScene.sks */,
-				3D1CCA441E06084100FCA51B /* FastGameEndScene.sks */,
+				3D9145651E16FDBB00BA53CF /* fasttap */,
+				3D9145661E16FDC800BA53CF /* balldrop */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -193,11 +194,8 @@
 		3D9069121DF4F5C2007B91E4 /* Scene Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3D9069131DF4F628007B91E4 /* MainMenuScene.swift */,
-				3D9069171DF4F7DF007B91E4 /* OnePlayerSceneClass.swift */,
-				3D0B4FDB1DFC71D500B55A38 /* EndGameSceneClass.swift */,
-				3DB9362C1E01D8E300DD106D /* FastGameSceneClass.swift */,
-				3D1CCA461E0609D100FCA51B /* FastGameEndSceneClass.swift */,
+				3D9145641E16FD9300BA53CF /* fasttap */,
+				3D9145621E16FD6000BA53CF /* balldrop */,
 			);
 			name = "Scene Classes";
 			sourceTree = "<group>";
@@ -208,6 +206,46 @@
 				3D90691A1DF5E34F007B91E4 /* ItemController.swift */,
 			);
 			name = "Item Controller Classes";
+			sourceTree = "<group>";
+		};
+		3D9145621E16FD6000BA53CF /* balldrop */ = {
+			isa = PBXGroup;
+			children = (
+				3D9069171DF4F7DF007B91E4 /* OnePlayerSceneClass.swift */,
+				3D0B4FDB1DFC71D500B55A38 /* EndGameSceneClass.swift */,
+			);
+			name = balldrop;
+			sourceTree = "<group>";
+		};
+		3D9145641E16FD9300BA53CF /* fasttap */ = {
+			isa = PBXGroup;
+			children = (
+				3D9069131DF4F628007B91E4 /* MainMenuScene.swift */,
+				3DB9362C1E01D8E300DD106D /* FastGameSceneClass.swift */,
+				3D1CCA461E0609D100FCA51B /* FastGameEndSceneClass.swift */,
+				3D9145691E16FFCB00BA53CF /* HowToPlaySceneClass.swift */,
+			);
+			name = fasttap;
+			sourceTree = "<group>";
+		};
+		3D9145651E16FDBB00BA53CF /* fasttap */ = {
+			isa = PBXGroup;
+			children = (
+				3D90690F1DF4F5A5007B91E4 /* MainMenu.sks */,
+				3DB9362A1E01D8BA00DD106D /* FastGameScene.sks */,
+				3D1CCA441E06084100FCA51B /* FastGameEndScene.sks */,
+				3D9145671E16FDFF00BA53CF /* HowToPlayScene.sks */,
+			);
+			name = fasttap;
+			sourceTree = "<group>";
+		};
+		3D9145661E16FDC800BA53CF /* balldrop */ = {
+			isa = PBXGroup;
+			children = (
+				3D9069151DF4F7BE007B91E4 /* OnePlayerScene.sks */,
+				3D0B4FD91DFC71BC00B55A38 /* EndGameScene.sks */,
+			);
+			name = balldrop;
 			sourceTree = "<group>";
 		};
 		3DB936211DFCC62D00DD106D /* Frameworks */ = {
@@ -353,6 +391,7 @@
 				3D0B4FDA1DFC71BC00B55A38 /* EndGameScene.sks in Resources */,
 				3D9068E61DF4EAA7007B91E4 /* Main.storyboard in Resources */,
 				3D13D7B51E1642210015D3F2 /* bgmusic.mp3 in Resources */,
+				3D9145681E16FDFF00BA53CF /* HowToPlayScene.sks in Resources */,
 				3DD751B31E0E66E600EABC91 /* splat.wav in Resources */,
 				3D9068E81DF4EAA7007B91E4 /* Assets.xcassets in Resources */,
 				3D9068EB1DF4EAA7007B91E4 /* LaunchScreen.storyboard in Resources */,
@@ -387,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D9069141DF4F628007B91E4 /* MainMenuScene.swift in Sources */,
+				3D91456A1E16FFCB00BA53CF /* HowToPlaySceneClass.swift in Sources */,
 				3D1CCA471E0609D100FCA51B /* FastGameEndSceneClass.swift in Sources */,
 				3D0B4FDC1DFC71D500B55A38 /* EndGameSceneClass.swift in Sources */,
 				3D9068E31DF4EAA7007B91E4 /* GameViewController.swift in Sources */,
